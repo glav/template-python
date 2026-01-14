@@ -2,7 +2,7 @@
 
 This repository is a small, intentionally minimal Python template you can use as the starting point for new repos.
 
-It’s designed to bequick workflow to get started while keeping the day-0 developer experience solid (devcontainer support, modern dependency management, and a place for agent instructions).
+It’s designed to be a quick workflow to get started while keeping the day-0 developer experience solid (devcontainer support, modern dependency management, and a place for agent instructions).
 
 ## What this template includes
 
@@ -43,3 +43,16 @@ uv run python src/app.py
 ```bash
 cp .env-sample .env
 ```
+
+## Copilot / AI Assisted workflow
+
+This template includes an `.agent/` directory containing reusable prompt “commands” and standards you can use with GitHub Copilot (and other coding agents).
+
+- `.agent/commands/`: ready-to-run prompts for common tasks, for example:
+	- `setup/`: repo bootstrap tasks (e.g. creating `AGENTS.md`)
+	- `project/`: planning prompts (e.g. sprint planning)
+	- `docs/`: documentation prompts (e.g. creating ADRs)
+- `.agent/standards/`: templates and standards for consistent artifacts (ADRs, feature specs, task plans)
+- `.agent/instructions/`: “apply-to” instructions that guide how agents write certain file types (e.g. Bash and Bicep)
+
+If you base a new repository on this template, treat `.agent/` as a starting library: keep what helps your team, remove what doesn’t, and add org-specific workflows over time.

@@ -2,7 +2,7 @@
 
 ## Project overview
 
-This repository is a small Python sandbox for experimenting with GitHub Copilot/model workflows.
+This repository is a small Python setup for starting python developer as quickly as possible using a devcontainer and AI assisted workflows.
 
 The current runtime entrypoint is a minimal script that loads environment variables from a `.env` file (via `python-dotenv`) and prints whether anything was loaded.
 
@@ -58,6 +58,11 @@ Notes about `.env` discovery:
 - `src/load_env.py` checks for `.env` in the current working directory (`.env`) and one level up (`../.env`).
 - If you run from the repo root, put `.env` in the repo root.
 - If you run from `src/`, it will also find the repo-root `.env` via `../.env`.
+
+### Copilot / AI Assisted workflow
+
+- All Copilot and AI assisted workflows exist in the .agent directory
+- If the user asks about workflows, prompts or other AI assisted ways of working, describe the use and structure of the .agent directory and purpose.
 
 ### Add new scripts
 
