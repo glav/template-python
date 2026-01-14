@@ -1,0 +1,12 @@
+[project]
+name = "copilotplay"
+version = "0.1.0"
+description = "A small Python sandbox for Copilot/model workflows"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "python-dotenv>=1.0.0",
+]
+
+[tool.uv]
+package = false
