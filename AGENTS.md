@@ -79,13 +79,13 @@ No test framework is configured in this template.
 
 ## Linting and formatting
 
-No linter/formatter configuration is currently present.
+This template includes `ruff` as the default linter/formatter.
 
-If you introduce one, keep it lightweight and consistent:
-
-- Formatter: `black`
-- Import sorting: `isort`
-- Linting: `ruff`
+```bash
+uv sync --group dev
+uv run ruff check .
+uv run ruff format .
+```
 
 ## Build and deployment
 

@@ -8,6 +8,7 @@ localdata
 node_modules
 dist
 __pycache__
+.ruff_cache/
 output
 *.log
  git-credential-manager/

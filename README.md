@@ -35,6 +35,16 @@ uv sync
 uv run python src/app.py
 ```
 
+## Linting and formatting
+
+This template includes `ruff`.
+
+```bash
+uv sync --group dev
+uv run ruff check .
+uv run ruff format .
+```
+
 ## Environment variables
 
 - Copy `.env-sample` to `.env` and fill in values as needed.
