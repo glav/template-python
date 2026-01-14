@@ -1,4 +1,4 @@
-# template-python (copilotplay)
+# Template - Python
 
 This repository is a small, intentionally minimal Python template you can use as the starting point for new repos.
 
