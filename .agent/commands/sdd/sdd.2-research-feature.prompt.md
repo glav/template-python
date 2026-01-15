@@ -83,6 +83,10 @@ Use the runSubagent tool for every research task.
 * Update the research doc continuously with findings, citations, and examples.
 * Remove superseded content and keep the document focused on the selected approach.
 
+### MUST
+- MUST: Do not create any source code files are part of this process. Only create markdown specification files and JSON state files as described.
+- MUST: Follow all file path and naming conventions exactly as specified.
+
 ## Alternative Technical Scenario Analysis Framework
 
 For each scenario and approach:

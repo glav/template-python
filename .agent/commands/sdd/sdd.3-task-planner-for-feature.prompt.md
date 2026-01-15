@@ -97,6 +97,10 @@ You WILL include:
 * **Success Criteria**: Task-level verification steps
 * **Dependencies**: Prerequisites for each task
 
+### MUST
+- MUST: Do not create any source code files are part of this process. Only create markdown specification files and JSON state files as described.
+- MUST: Follow all file path and naming conventions exactly as specified.
+
 ## Templates
 
 You WILL use these templates as the foundation for all planning files:
