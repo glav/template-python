@@ -66,3 +66,13 @@ This template includes an `.agent/` directory containing reusable prompt “comm
 - `.agent/instructions/`: “apply-to” instructions that guide how agents write certain file types (e.g. Bash and Bicep)
 
 If you base a new repository on this template, treat `.agent/` as a starting library: keep what helps your team, remove what doesn’t, and add org-specific workflows over time.
+
+## Copilot CLI (devcontainer)
+
+The devcontainer runs a post-create script that installs GitHub Copilot CLI using the official installer (`https://gh.io/copilot-install`).
+
+Optional environment variables:
+
+- `SKIP_INSTALL_COPILOT_CLI=true`: skip installing Copilot CLI
+- `COPILOT_CLI_VERSION=vX.Y.Z`: install a specific version tag (defaults to latest)
+- `COPILOT_CLI_PREFIX=/some/path`: install to a custom prefix (defaults per installer)

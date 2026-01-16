@@ -3,6 +3,12 @@
 set -e
 set -o pipefail
 
+## Optional Environment Variables:
+
+SKIP_INSTALL_COPILOT_CLI="${SKIP_INSTALL_COPILOT_CLI:-}" # Set to 'true' to skip installing Copilot CLI
+COPILOT_CLI_VERSION="${COPILOT_CLI_VERSION:-}"           # Optional version (ex. 'v0.0.369'); defaults to latest when unset
+COPILOT_CLI_PREFIX="${COPILOT_CLI_PREFIX:-}"             # Optional install prefix; defaults per official installer
+
 log() {
 	printf "========== %s ==========%s" "$1" $'\n'
 }
@@ -36,6 +42,8 @@ install_uv() {
 }
 
 install_uv
+
+bash .devcontainer/install-copilot-cli.sh
 
 echo ----------------------------------------------
 echo If you want help using the prompt library or list
