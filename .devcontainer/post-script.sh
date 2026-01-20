@@ -43,8 +43,6 @@ install_uv() {
 
 install_uv
 
-bash .devcontainer/install-copilot-cli.sh
-
 echo ----------------------------------------------
 echo If you want help using the prompt library or list
 echo of available prompts, simply type:
