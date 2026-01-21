@@ -32,16 +32,45 @@ Follow all instructions from #file:{{relative_path}}/.github/instructions/task-i
 
 ### [ ] Phase 1: {{phase_1_name}}
 
-* [ ] Task 1.1: {{specific_action_1_1}}
-  * Details: .agent-tracking/details/{{date}}-{{task_description}}-details.md (Lines {{line_start}}-{{line_end}})
+**Phase Objective**: {{measurable_outcome_for_this_phase}}
 
-* [ ] Task 1.2: {{specific_action_1_2}}
+#### Sub-phase 1.A: {{sub_phase_name}} (optional grouping for complex phases)
+
+* [ ] Task 1.A.1: {{specific_atomic_action}}
   * Details: .agent-tracking/details/{{date}}-{{task_description}}-details.md (Lines {{line_start}}-{{line_end}})
+  * Dependencies: {{prerequisites_or_none}}
+  * Priority: {{CRITICAL | HIGH | MEDIUM}}
+
+* [ ] Task 1.A.2: {{specific_atomic_action}}
+  * Details: .agent-tracking/details/{{date}}-{{task_description}}-details.md (Lines {{line_start}}-{{line_end}})
+  * Dependencies: Task 1.A.1
 
 ### [ ] Phase 2: {{phase_2_name}}
 
+**Phase Objective**: {{measurable_outcome_for_this_phase}}
+
 * [ ] Task 2.1: {{specific_action_2_1}}
   * Details: .agent-tracking/details/{{date}}-{{task_description}}-details.md (Lines {{line_start}}-{{line_end}})
+  * Dependencies: Phase 1 completion
+
+### [ ] Phase X: Test Implementation (REQUIRED for code features - adjust timing per test strategy)
+
+**Test Strategy**: {{TDD | Code-First | Hybrid}} - See .agent-tracking/test-strategies/{{date}}-{{task_description}}-test-strategy.md
+
+#### For TDD: This phase comes BEFORE implementation phases
+#### For Code-First: This phase comes AFTER implementation phases
+
+* [ ] Task X.1: Create/Update tests for {{component_name}}
+  * Details: .agent-tracking/details/{{date}}-{{task_description}}-details.md (Lines {{line_start}}-{{line_end}})
+  * Test Approach: {{TDD | Code-First}} (per test strategy)
+  * Coverage Target: {{X}}% (per test strategy)
+  * Test Framework: {{framework_from_research}}
+  * Dependencies: {{test_infrastructure_or_implementation}}
+
+* [ ] Task X.2: Validate test coverage and quality
+  * Details: .agent-tracking/details/{{date}}-{{task_description}}-details.md (Lines {{line_start}}-{{line_end}})
+  * Success: Coverage meets {{X}}% target, all tests pass
+  * Dependencies: Task X.1
 
 ## Dependencies
 
