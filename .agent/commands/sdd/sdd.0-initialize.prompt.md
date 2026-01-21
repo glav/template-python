@@ -47,13 +47,13 @@ You MUST ensure these directories exist:
 ```
 .agent-tracking/
 ├── feature-spec-sessions/     # Step 1 state files
-├── spec-reviews/               # Step 1.5 review reports
-├── research/                   # Step 2 research documents
-├── test-strategies/            # Step 2.5 test strategies
-├── plans/                      # Step 3 task plans
-├── details/                    # Step 3 task details
-├── plan-reviews/               # Step 3.5 review reports
-└── changes/                    # Step 4 change logs
+├── spec-reviews/               # Step 2 review reports
+├── research/                   # Step 3 research documents
+├── test-strategies/            # Step 4 test strategies
+├── plans/                      # Step 5 task plans
+├── details/                    # Step 5 task details
+├── plan-reviews/               # Step 6 review reports
+└── changes/                    # Step 7 change logs
 ```
 
 You WILL create any missing directories using:
