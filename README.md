@@ -69,4 +69,39 @@ If you base a new repository on this template, treat `.agent/` as a starting lib
 
 ## Copilot CLI (devcontainer)
 
-The devcontainer includes GitHub Copilot CLI via the official devcontainer feature (`ghcr.io/devcontainers/features/copilot-cli:1`).
+The devcontainer includes GitHub Copilot CLI via the official devcontainer feature (`ghcr.io/devcontainers/features/copilot-cli:latest`).
+
+## Spec-Driven Development (SDD) Workflow
+
+This template includes an enhanced **Spec-Driven Development (SDD)** workflow in `.agent/commands/sdd/`. The SDD workflow provides a structured, 9-step process for developing features with built-in quality gates and testing integration.
+
+### SDD Workflow Steps
+
+| Step | Prompt File | Purpose |
+|------|-------------|---------|
+| 0 | `sdd.0-initialize.prompt.md` | Initialize environment and verify prerequisites |
+| 1 | `sdd.1-create-feature-spec.prompt.md` | Create feature specification via guided Q&A |
+| 2 | `sdd.2-review-spec.prompt.md` | Review spec for completeness (quality gate) |
+| 3 | `sdd.3-research-feature.prompt.md` | Research implementation approach |
+| 4 | `sdd.4-determine-test-strategy.prompt.md` | Determine TDD vs Code-First approach |
+| 5 | `sdd.5-task-planner-for-feature.prompt.md` | Create implementation plan with test phases |
+| 6 | `sdd.6-review-plan.prompt.md` | Review plan for readiness (quality gate) |
+| 7 | `sdd.7-task-implementer-for-feature.prompt.md` | Execute implementation systematically |
+| 8 | `sdd.8-post-implementation-review.prompt.md` | Final validation before completion |
+
+### How to Use
+
+1. **Initialize**: Run `sdd.0-initialize.prompt.md` to set up the environment
+2. **Start a feature**: Run `sdd.1-create-feature-spec.prompt.md` with your feature idea
+3. **Follow handoffs**: Each step tells you which step to run next
+4. **Don't skip review gates**: Steps 2, 4, 6, and 8 catch issues early
+
+### Key Features
+
+- **Quality gates** at review steps with explicit PASS/FAIL validation
+- **Deterministic test strategy** using a scoring-based decision matrix
+- **Integrated testing** with mandatory test phases in implementation plans
+- **State management** for session continuity across steps
+- **Artifact tracking** in `.agent-tracking/` directory
+
+For full documentation, see `.agent/commands/sdd/README.md`.
