@@ -29,6 +29,31 @@
 
 ## Research Executed
 
+### Testing Infrastructure Research
+* **Framework**: {{test_framework_name_and_version}}
+  * Location: {{test_directory_structure}}
+  * Naming: {{test_file_naming_pattern}}
+  * Runner: {{test_runner_command}}
+  * Coverage: {{coverage_tool_and_configuration}}
+
+### Test Patterns Found
+* **File**: {{path_to_example_test}} (Lines {{X-Y}})
+  * {{test_pattern_description}}
+  * {{assertion_pattern_description}}
+  * {{mock_stub_strategy}}
+  * {{fixture_and_setup_patterns}}
+
+### Coverage Standards
+* **Unit Tests**: {{X}}% minimum
+* **Integration Tests**: {{X}}% minimum
+* **Critical Paths**: {{coverage_requirement}}
+
+### Testing Approach Recommendation
+* **{{Component_1}}**: {{TDD | Code-First}} ({{rationale}})
+* **{{Component_2}}**: {{TDD | Code-First}} ({{rationale}})
+
+**Rationale**: {{overall_testing_approach_justification}}
+
 ### File Analysis
 * {{file_path}}
   * {{findings_summary_with_line_numbers_e.g._L10-L42}}
