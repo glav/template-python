@@ -107,7 +107,6 @@ Code-First Score: 1
 
 Decision: TDD (score 9 >> threshold 6)
 ```
-```
 
 You MUST include this completed matrix in every test strategy document.
 
