@@ -43,8 +43,14 @@ install_uv() {
 
 install_uv
 
+#Setup easy use of teambot
+grep -qxF "alias teambot='uvx --from git+https://github.com/glav/teambot teambot'" ~/.bashrc \
+	|| echo "alias teambot='uvx --from git+https://github.com/glav/teambot teambot'" >> ~/.bashrc
+
+uvx --from git+https://github.com/glav/teambot teambot --version  # to ensure its initalised and cached
+
 echo ----------------------------------------------
-echo If you want help using the prompt library or list
-echo of available prompts, simply type:
-echo 'What prompts are available to use?'
+echo Type 'copilot' to use copilot CLI and login
+echo Type 'teambot' to use teambot CLI
+echo Type 'teambot init' to initialize teambot in this directory first time
 echo ----------------------------------------------
