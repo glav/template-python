@@ -63,6 +63,69 @@ Notes about `.env` discovery:
 
 - All Copilot and AI assisted workflows exist in the .agent directory
 - If the user asks about workflows, prompts or other AI assisted ways of working, describe the use and structure of the .agent directory and purpose.
+- Github Copilot CLI and Teambot are also pre-installed for use on agentic workflows.
+- To start using Copilot CLI, type `copilot`
+- To start using Teambot, you must:
+  - First ensure you have logged in via `copilot` using `/login'
+  - Run `teambot init` to set up templates and workflows.
+  - Then run `teambot run` to begin using.
+
+### `.agent` directory structure
+
+The `.agent` directory contains commands, instructions, and standards used by AI-assisted workflows.
+
+#### Commands (`commands/`)
+
+Prompt files invoked as slash commands (e.g. `/sdd:0-initialize`).
+
+| Path | Description |
+|------|-------------|
+| `commands/azdo/azdo.generate-pr-description.prompt.md` | Generates pull request descriptions using Azure DevOps templates. |
+| `commands/docs/docs.create-adr.prompt.md` | Creates architecture decision records following organisational standards. |
+| `commands/project/proj.sprint-planning.prompt.md` | Builds sprint plans for software engineering teams to deliver implementation engagements. |
+| `commands/setup/setup.agents-md-creation.prompt.md` | Generates or updates the `AGENTS.md` file for the repository. |
+
+**Spec-Driven Development (SDD) workflow** (`commands/sdd/`)
+
+A sequential workflow with quality gates for taking a feature from specification through to implementation.
+
+| Path | Description |
+|------|-------------|
+| `commands/sdd/README.md` | Documents the SDD workflow overview and its 9 sequential steps. |
+| `commands/sdd/sdd.0-initialize.prompt.md` | Initialises the SDD workflow by verifying prerequisites and creating tracking directories. |
+| `commands/sdd/sdd.1-create-feature-spec.prompt.md` | Guides creation of feature specifications with Q&A and reference integration. |
+| `commands/sdd/sdd.2-review-spec.prompt.md` | Reviews and validates specifications before the research phase. |
+| `commands/sdd/sdd.3-research-feature.prompt.md` | Conducts comprehensive research and analysis for the feature. |
+| `commands/sdd/sdd.4-determine-test-strategy.prompt.md` | Analyses specs and research to recommend an optimal testing strategy. |
+| `commands/sdd/sdd.5-task-planner-for-feature.prompt.md` | Creates actionable implementation plans for the feature. |
+| `commands/sdd/sdd.6-review-plan.prompt.md` | Reviews and validates implementation plans before execution. |
+| `commands/sdd/sdd.7-task-implementer-for-feature.prompt.md` | Implements task plans with progressive tracking and change records. |
+| `commands/sdd/sdd.8-post-implementation-review.prompt.md` | Performs post-implementation review and final validation. |
+
+#### Instructions (`instructions/`)
+
+Contextual guidelines automatically applied to AI interactions.
+
+| Path | Description |
+|------|-------------|
+| `instructions/prompt.instructions.md` | Guidelines for creating high-quality prompt files for GitHub Copilot. |
+| `instructions/bash/bash.instructions.md` | Instructions for bash script implementation with established conventions. |
+| `instructions/bash/bash.md` | Guidelines for secure, maintainable bash scripting practices. |
+| `instructions/bicep/bicep-standards.md` | Coding standards and best practices for Bicep Infrastructure as Code. |
+| `instructions/bicep/bicep.instructions.md` | Instructions for Bicep infrastructure implementation. |
+| `instructions/bicep/bicep.md` | Structural guidelines for Bicep development. |
+
+#### Standards (`standards/`)
+
+Templates and standards referenced by commands and instructions.
+
+| Path | Description |
+|------|-------------|
+| `standards/decision-record-standards.md` | Standards for creating decision records capturing architectural and policy decisions. |
+| `standards/decision-record-template.md` | Template for decision records with status, deciders, context, and consequences. |
+| `standards/feature-spec-template.md` | Template for feature specification documents with progress tracking. |
+| `standards/research-feature-template.md` | Template for task research documents with implementation analysis. |
+| `standards/task-planning-template.md` | Template for task checklists with overview and implementation instructions. |
 
 ### Add new scripts
 
@@ -72,10 +135,10 @@ If you want `python -m ...` module execution, add `src/__init__.py` and switch t
 
 ## Testing
 
-No test framework is configured in this template.
+- Framework: `pytest` with `pytest-cov` and `pytest-mock`
+- Tests located in `tests/` directory
+- Current coverage: 80% (1050 tests)
 
-- If you add tests, prefer `pytest` and place tests under `tests/`.
-- If the intended approach is TDD/BDD (or if there are preferred test tools), confirm with the repo owner/maintainers before standardizing.
 
 ## Linting and formatting
 
@@ -86,6 +149,11 @@ uv sync --group dev
 uv run ruff check .
 uv run ruff format .
 ```
+
+## Clean commits
+- When committing or changing code, always ensure properly linted code by running:
+- `uv run ruff format -- .` and `uv run ruff check . --fix` as part of the process.
+- Also ensure thet `uv run ruff format --check .` is executed as part of the process.
 
 ## Build and deployment
 
